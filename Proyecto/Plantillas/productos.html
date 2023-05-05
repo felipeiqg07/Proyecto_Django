@@ -4,16 +4,26 @@
 {% block contenido %}
 <main>
 
+    <section class="container">
+        <form action="{% url 'pagina_productos' %}" method="GET">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">ඞ </span>
+              <input class="form-control" placeholder="ingresa un texto" name="busqueda">
+              <input type="submit" value="buscar ..." class="btn btn-success-outline"> 
+            </div>
+          </form>
+    </section>
+    
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Album example</h1>
-                <p class="lead text-body-secondary">Something short and leading about the collection below—its contents,
-                    the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
-                    entirely.</p>
+                <h1 class="fw-light">¡Productos Baratos!</h1>
+                <p class="lead text-body-secondary">Ven obserba nuestros productos que ofresemos para tus mascotas! Desde alimentos
+                    , accesorios, juguetes, medicina e incluso ropa!!!  
+                </p>
                 <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                    <a href="{% url 'pagina_productos' %}" class="btn btn-primary my-2">Ver todos los productos</a>
+                    <a href="{% url 'pagina_principal' %}" class="btn btn-secondary my-2">Volver al inicio</a>
                 </p>
             </div>
         </div>
@@ -23,9 +33,9 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-                {% for lugar in lista %}
-                <div class="col" id="{{ lugar.id }}">
+                {% if lista %} 
+                    {% for lugar in lista %}
+                    <div class="col" id="{{ lugar.id }}">
                     <div class="card shadow-sm">
                         <img src="{{ lugar.foto }}" class="card-img-top" >
                         <div class="card-body">
@@ -43,12 +53,22 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
+                    </div>
+                    {% endfor %}
+
+                {% else %}
+                   <h3>                   </h3> <h3 class="text-center">"{{ palabra }}" No Existe O Esta Mal Escrito ¿Dislexia activado?</h3>
+                {% endif %}
+
+
+                
             </div>
 
         </div>
     </div>
-
+    <footer class="container">
+        <p class="float-end"><a href="#">De vuelta pa arriba XD</a></p>
+        <p>© 1999–2023 GatitosCompany, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
 </main>
 {% endblock contenido %}
