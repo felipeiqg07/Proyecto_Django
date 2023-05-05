@@ -1,5 +1,7 @@
 {% extends 'base/base.html' %}
-
+{% block titulo %}
+    Productos
+{% endblock titulo %}
 
 {% block contenido %}
 <main>
@@ -7,9 +9,9 @@
     <section class="container">
         <form action="{% url 'pagina_productos' %}" method="GET">
             <div class="input-group">
-              <span class="input-group-text" id="basic-addon1">ඞ </span>
+              <span class="input-group-text" id="basic-addon1">ඞ</span>
               <input class="form-control" placeholder="ingresa un texto" name="busqueda">
-              <input type="submit" value="buscar ..." class="btn btn-success-outline"> 
+              <input type="submit" value="Buscar" class="btn btn-success-outline"> 
             </div>
           </form>
     </section>
