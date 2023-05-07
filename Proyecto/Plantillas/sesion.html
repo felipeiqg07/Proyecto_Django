@@ -4,19 +4,87 @@
     Inicio Sesion
 {% endblock titulo %}
 
+
+
+{% block css %}
+<style type="text/css">
+
+  #login-box {
+    border: 1px solid blue;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15%;
+    background: #00000080;
+    padding: 20px 50px;
+}
+
+  #login-box h1 {
+    color: white;
+}
+
+  #login-box .form .item input {
+    width: 200px; 
+    border: 0; 
+    border-bottom: 5px solid white; 
+    font-size: 18px; 
+    background: #ffffff00; 
+    color: white; 
+    padding: 5px 10px; 
+}
+
+  #login-box .form .item i :nth-child(1) {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+#login-box button {
+    border: 0;
+    width: 150px; 
+    height: 30px;
+    margin-top: 18px; 
+    font-size: 18px; 
+    color: white; 
+    border-radius: 25px; 
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%); 
+}
+body {
+    background: url("https://th.bing.com/th/id/R.c7a5965b690dde77d242bfa613fe07be?rik=c3639yxFO7cX3Q&pid=ImgRaw&r=0") center; 
+    background-size: 100% auto; 
+    background-repeat: no-repeat; 
+}
+
+
+
+</style>
+
+{% endblock css %}
+
 {% block contenido %}
 
 
-<form name="login" action="index_submit" method="get" accept-charset="utf-8">
-  <ul>
-    <li><label for="usermail">Correo electrónico</label>
-    <input type="email" name="usermail" placeholder="tunombre@correoelectrónico.com" required></li>
-    <li><label for="password">Contraseña</label>
-    <input type="password" name="password" placeholder="contraseña" required></li>
-    <li>
-    <input type="submit" value="Login"></li>
-  </ul>
-</form>
-</section>
+
+<body>
+  <form action="#" method="POST">
+      <div id="login-box">
+          <h1>Login</h1> <! - El título de Inicio de sesión ->
+
+          <div class="form">
+              <div class="item"> <! - parte de nombre de usuario ->
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                  <input type="text" placeholder="username" name="username"> <! - Entrada de nombre de usuario realizada por cuadro de texto ->
+              </div>
+
+              <div class="item"> <! - parte de la contraseña ->
+                  <input type="password" placeholder="password" name="password"> <! - Entrada de contraseña usando el cuadro de texto de contraseña ->
+              </div>
+
+          </div>
+          
+          <button type="submit">Login</button> <! - Botón de inicio de sesión implementado con el botón ->
+      </div>
+  </form>
+</body>
+
 
 {% endblock contenido %}
